@@ -1,0 +1,1200 @@
+<?xml version="1.0" encoding="GB2312" ?>
+<!--业务行为规则表-->
+<!--每一个Summary都是一项具体业务行为描述-->
+<!--Type,业务行为一种表现形式-->
+<!--relation,函数之间的关系.order=1,and=2,or=3,not=4.-->
+<!--order:函数依次执行;and:下列函数只要执行了即可;or:有一个函数执行即可;not:都不执行.-->
+<!--Function:可以表征该业务行为的函数,可以存在一个或多个.-->
+<!--name:对应于BA_KeyFunction.csv表中的CONSTRUCTBEHAVIOR项.-->
+<!--Parament:所要描述的参数信息.-->
+<!--index:所关注参数在函数参数列表中的索引.->
+<!--Family:字符串家族,见SensitiveString.xml文件中的StringFamily节点.-->
+<Summaries>
+	<!--file summary-->
+	<Summary name="self_delete" description="自删除">
+		<Type relation="1">
+			<Function name="file_delete" >
+				<Parament index="0">
+					<Family>45</Family>
+				</Parament>
+			</Function>
+		</Type>
+		<Type relation="1">
+			<Function name="file_move">
+				<Parament index="0">
+					<Family>45</Family>
+				</Parament>
+				<Parament index="1">
+					<Family>55</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="self_move" description="自移动">
+		<Type relation="1">
+			<Function name="file_move">
+				<Parament index="0">
+					<Family>45</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="self_copy" description="自复制">
+		<Type relation="1">
+			<Function name="file_copy">
+				<Parament index="0">
+					<Family>45</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="file_search" description="文件搜索">
+		<Type relation="1">
+			<Function name="file_find" />
+		</Type>
+	</Summary>
+	<Summary name="modify_file_time" description="修改文件时间">
+		<Type relation="1">
+			<Function name="file_time_set" />
+		</Type>
+	</Summary>
+	<Summary name="dll_creation_insystem" description="系统文件夹中创建DLL文件">
+		<Type relation="1">
+			<Function name="file_create">
+				<Parament index="0">
+					<Family>03|05|24|38</Family>
+					<Family>33</Family>
+				</Parament>
+				<Parament index="0" relate_function="file_write" relate_index="0"/>
+			</Function>
+			<Function name="file_write"/>
+		</Type>
+	</Summary>
+	<Summary name="exe_creation_insystem" description="系统文件夹中创建exe文件">
+		<Type relation="1">
+			<Function name="file_create">
+				<Parament index="0">
+					<Family>03|05|24|38</Family>
+					<Family>29</Family>
+				</Parament>
+				<Parament index="0" relate_function="file_write" relate_index="0"/>
+			</Function>
+			<Function name="file_write"/>
+		</Type>
+	</Summary>
+	<Summary name="win_dir_modify" description="修改windows文件">
+		<Type relation="1">
+			<Function name="file_create">
+				<Parament index="0">
+					<Family>02|03</Family>
+				</Parament>
+				<Parament index="0" relate_function="file_write" relate_index="0" />
+			</Function>
+			<Function name="file_write"/>
+		</Type>
+	</Summary>
+	<Summary name="file_auto_start" description="创建文件自启动项">
+		<Type relation="1">
+			<Function name="file_create">
+				<Parament index="0">
+					<Family>01</Family>
+				</Parament>
+				<Parament index="0" relate_function="file_write" relate_index="0" />
+			</Function>
+			<Function name="file_write"/>
+		</Type>
+		<Type relation="3">
+			<Function name="file_copy">
+				<Parament index="1">
+					<Family>01</Family>
+				</Parament>
+			</Function>
+			<Function name="file_move">
+				<Parament index="1">
+					<Family>01</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="file_modification_destruction" description="修改或删除非临时文件">
+		<Type relation="3">
+			<Function name="file_write">
+				<Parament index="0">
+					<Family notin="1">06|13</Family>
+				</Parament>
+			</Function>
+			<Function name="file_delete" >
+				<Parament index="0">
+					<Family notin="1">06|13</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="sys_file_modification" description="修改系统文件">
+		<Type relation="1">
+			<Function name="file_write">
+				<Parament index="0">
+					<Family notin="1">02|03</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="sys_file_delete" description="删除系统文件">
+		<Type relation="1">
+			<Function name="file_delete">
+				<Parament index="0">
+					<Family>02|03</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="start_exe_documents" description="在我的文档中创建进程">
+		<Type relation="3">
+			<Function name="process_create">
+				<Parament index="0">
+					<Family>04</Family>
+				</Parament>
+			</Function>
+			<Function name="shell_execute">
+				<Parament index="0">
+					<Family>04</Family>
+				</Parament>
+			</Function>
+			<Function name="process_winexec">
+				<Parament index="0">
+					<Family>04</Family>
+				</Parament>
+			</Function>
+			<Function name="process_create_as_user">
+				<Parament index="0">
+					<Family>04</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<!--reg summary-->
+	<Summary name="reg_auto_start" description="注册表自启动项">
+		<Type relation="1">
+			<Function name="reg_value_modify">
+				<Parament index="0">
+					<Family>14|28</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="all_reg_activitie" description="注册表创建和修改">
+		<Type relation="3">
+			<Function name="reg_create_or_open" />
+			<Function name="reg_value_modify" />
+		</Type>
+	</Summary>
+	<Summary name="disable_win_firewall" description="关闭系统防火墙">
+		<Type relation="3">
+			<Function name="reg_value_modify">
+				<Parament index="0">
+					<Family>22</Family>
+				</Parament>
+			</Function>
+			<Function name="reg_value_delete">
+				<Parament index="0">
+					<Family>22</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="change_internet_setting" description="修改网络配置">
+		<Type relation="1">
+			<Function name="reg_value_modify">
+				<Parament index="0">
+					<Family>19</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="disable_win_update" description="关闭windows自动更新">
+		<Type relation="3">
+			<Function name="reg_value_modify">
+				<Parament index="0">
+					<Family>47</Family>
+				</Parament>
+			</Function>
+			<Function name="reg_value_delete">
+				<Parament index="0">
+					<Family>47</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="image_hijack" description="映像劫持">
+		<Type relation="3">
+			<Function name="reg_value_modify">
+				<Parament index="0">
+					<Family>21</Family>
+				</Parament>
+			</Function>
+			<Function name="reg_create_or_open">
+				<Parament index="0">
+					<Family>21</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="disable_regedit" description="禁用注册表编辑器">
+		<Type relation="3">
+			<Function name="reg_value_modify">
+				<Parament index="0">
+					<Family>50</Family>
+				</Parament>
+			</Function>
+			<Function name="reg_value_delete">
+				<Parament index="0">
+					<Family>50</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="disable_taskmgr" description="禁用任务管理器">
+		<Type relation="1">
+			<Function name="reg_value_modify">
+				<Parament index="0">
+					<Family>49</Family>
+				</Parament>
+			</Function>
+			<Function name="reg_value_modify">
+				<Parament index="0">
+					<Family>49</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="install_ie_toolbar" description="安装IE插件">
+		<Type relation="1">
+			<Function name="reg_create_or_open">
+				<Parament index="0">
+					<Family>51</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="change_explorer" description="修改Explorer设置">
+		<Type relation="3">
+			<Function name="reg_value_modify">
+				<Parament index="0">
+					<Family>48</Family>
+				</Parament>
+			</Function>
+			<Function name="reg_value_delete">
+				<Parament index="0">
+					<Family>48</Family>
+				</Parament>
+			</Function>
+			<Function name="reg_create_or_open">
+				<Parament index="0">
+					<Family>48</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<!--process summary-->
+	<Summary name="process_create_intmpdir" description="在临时文件夹中创建进程">
+		<Type relation="3">
+			<Function name="process_create">
+				<Parament index="0">
+					<Family>06|13</Family>
+				</Parament>
+			</Function>
+			<Function name="shell_execute">
+				<Parament index="0">
+					<Family>06|13</Family>
+				</Parament>
+			</Function>
+			<Function name="process_winexec">
+				<Parament index="0">
+					<Family>06|13</Family>
+				</Parament>
+			</Function>
+			<Function name="process_create_as_user">
+				<Parament index="0">
+					<Family>06|13</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="start_process_recycle" description="在回收站中执行程序">
+		<Type relation="3">
+			<Function name="process_create">
+				<Parament index="0">
+					<Family>52</Family>
+				</Parament>
+			</Function>
+			<Function name="shell_execute">
+				<Parament index="0">
+					<Family>52</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="start_exe_system" description="系统区EXE启动">
+		<Type relation="3">
+			<Function name="process_create">
+				<Parament index="0">
+					<Family>02|24</Family>
+				</Parament>
+			</Function>
+			<Function name="shell_execute">
+				<Parament index="0">
+					<Family>02|24</Family>
+				</Parament>
+			</Function>
+			<Function name="process_winexec">
+				<Parament index="0">
+					<Family>02|24</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="start_script_process" description="启动脚本文件">
+		<Type relation="3">
+			<Function name="process_create">
+				<Parament index="0">
+					<Family>31</Family>
+				</Parament>
+			</Function>
+			<Function name="shell_execute">
+				<Parament index="0">
+					<Family>31</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<!--other summary-->
+	<Summary name="cookie_steal" description="偷取Cookies">
+		<Type relation="1">
+			<Function name="cookie_get" />
+		</Type>
+	</Summary>
+	<Summary name="improve_privilege" description="提权">
+		<Type relation="1">
+			<Function name="process_token_open">
+				<Parament index="0" relate_function="process_previlege_set" relate_index="0"/>
+			</Function>
+			<Function name="privilege_query" />
+			<Function name="process_previlege_set" />
+		</Type>
+	</Summary>
+	<Summary name="removeable_storage_package" description="打包移动存储设备">
+		<Type relation="3">
+			<Function name="process_create">
+				<Parament index="0">
+					<Family>57</Family>
+				</Parament>
+			</Function>
+			<Function name="process_winexec">
+				<Parament index="0">
+					<Family>57</Family>
+				</Parament>
+			</Function>
+			<Function name="shell_execute">
+				<Parament index="0">
+					<Family>57</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<!--2014 02 25 www -->
+	<Summary name="dynamic_api_calls" description="动态调用API行为">
+		<Type relation="1">
+			<Function name="proc_address_get" />
+		</Type>
+	</Summary>
+	<Summary name="load_missing_dll" description="加载不存在的dll">
+		<Type relation="1">
+			<Function name="dll_load">
+				<Parament index="1">
+					<Family>55</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="create_remote_thread_in_system_thread" description="远程注入系统进程">
+		<Type relation="1">
+			<Function name="process_open">
+				<Parament index="0" relate_function="process_memory_write" relate_index="0">
+					<Family>37</Family>
+				</Parament>
+			</Function>
+			<Function name="process_memory_write">
+				<Parament index="0" relate_function="remote_thread_create" relate_index="0"/>
+			</Function>
+			<Function name="remote_thread_create" />
+		</Type>
+		<Type relation="1">
+			<Function name="process_create">
+				<Parament index="0">
+					<Family>37</Family>
+				</Parament>
+				<Parament index="1">
+					<Family>62</Family>
+				</Parament>
+				<Parament index="0" relate_function="process_memory_write" relate_index="0"/>
+				<Parament index="0" relate_function="thread_resume" relate_index="0"/>
+			</Function>
+			<Function name="process_memory_write"/>
+			<Function name="thread_resume"/>
+		</Type>
+		<Type relation="1">
+			<Function name="hook_set">
+				<Parament index="4">
+					<Family>37</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="create_remote_thread_in_av_thread" description="远程注入杀软进程">
+		<Type relation="1">
+			<Function name="process_open">
+				<Parament index="0" relate_function="process_memory_write" relate_index="0">
+					<Family>36</Family>
+				</Parament>
+			</Function>
+			<Function name="process_memory_write">
+				<Parament index="0" relate_function="remote_thread_create" relate_index="0"/>
+			</Function>
+			<Function name="remote_thread_create" />
+		</Type>
+		<Type relation="1">
+			<Function name="process_create">
+				<Parament index="0" relate_function="process_memory_write" relate_index="0">
+					<Family>36</Family>
+				</Parament>
+				<Parament index="1">
+					<Family>62</Family>
+				</Parament>
+				<Parament index="0" relate_function="thread_resume" relate_index="0"/>
+			</Function>
+			<Function name="process_memory_write"/>
+			<Function name="thread_resume"/>
+		</Type>
+		<Type relation="1">
+			<Function name="hook_set">
+				<Parament index="4">
+					<Family>36</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="create_remote_thread_in_common_thread" description="远程注入通用进程">
+		<Type relation="1">
+			<Function name="process_open">
+				<Parament index="0" relate_function="process_memory_write" relate_index="0">
+					<Family>53</Family>
+				</Parament>
+			</Function>
+			<Function name="process_memory_write">
+				<Parament index="0" relate_function="remote_thread_create" relate_index="0"/>
+			</Function>
+			<Function name="remote_thread_create" />
+		</Type>
+		<Type relation="1">
+			<Function name="process_create">
+				<Parament index="0" relate_function="process_memory_write" relate_index="0">
+					<Family>53</Family>
+				</Parament>
+				<Parament index="1">
+					<Family>62</Family>
+				</Parament>
+				<Parament index="0" relate_function="thread_resume" relate_index="0"/>
+			</Function>
+			<Function name="process_memory_write"/>
+			<Function name="thread_resume"/>
+		</Type>
+		<Type relation="1">
+			<Function name="hook_set">
+				<Parament index="4">
+					<Family>53</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="find_av_process" description="查找杀软进程">
+		<Type relation="1">
+			<Function name="process_next">
+				<Parament index="0" relate_function="strcmp" relate_index="0"/>
+			</Function>
+			<Function name="strcmp">
+				<Parament index="1">
+					<Family>36</Family>
+				</Parament>
+			</Function>
+		</Type>
+		<Type relation="1">
+			<Function name="process_next">
+				<Parament index="0" relate_function="strcmp" relate_index="1"/>
+			</Function>
+			<Function name="strcmp">
+				<Parament index="0">
+					<Family>36</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="find_system_process" description="查找系统进程">
+		<Type relation="1">
+			<Function name="process_next">
+				<Parament index="0" relate_function="strcmp" relate_index="0"/>
+			</Function>
+			<Function name="strcmp">
+				<Parament index="1">
+					<Family>37</Family>
+				</Parament>
+			</Function>
+		</Type>
+		<Type relation="1">
+			<Function name="process_next">
+				<Parament index="0" relate_function="strcmp" relate_index="1"/>
+			</Function>
+			<Function name="strcmp">
+				<Parament index="0">
+					<Family>36</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="find_common_process" description="查找通用进程">
+		<Type relation="1">
+			<Function name="process_next">
+				<Parament index="0" relate_function="strcmp" relate_index="0"/>
+			</Function>
+			<Function name="strcmp">
+				<Parament index="1">
+					<Family>36</Family>
+				</Parament>
+			</Function>
+		</Type>
+		<Type relation="1">
+			<Function name="process_next">
+				<Parament index="0" relate_function="strcmp" relate_index="1"/>
+			</Function>
+			<Function name="strcmp">
+				<Parament index="0">
+					<Family>53</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="kill_common_process" description="结束通用进程">
+		<Type relation="1">
+			<Function name="process_terminate">
+				<Parament index="0">
+					<Family>53</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="kill_system_process" description="结束系统进程">
+		<Type relation="1">
+			<Function name="process_terminate">
+				<Parament index="0">
+					<Family>37</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="kill_antivirus_process" description="结束杀软进程">
+		<Type relation="1">
+			<Function name="process_terminate">
+				<Parament index="0">
+					<Family>36</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="start_process_user_dir" description="在用户文件夹执行程序">
+		<Type relation="3">
+			<Function name="process_create">
+				<Parament index="0">
+					<Family>70</Family>
+				</Parament>
+			</Function>
+			<Function name="shell_execute">
+				<Parament index="0">
+					<Family>70</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="start_sysprocess_system" description="在系统文件夹执行系统程序">
+		<Type relation="3">
+			<Function name="process_create">
+				<Parament index="0">
+					<Family>01|02|03</Family>
+					<Family>37</Family>
+				</Parament>
+			</Function>
+			<Function name="shell_execute">
+				<Parament index="0">
+					<Family>01|02|03</Family>
+					<Family>37</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="start_nonsysprocess_system" description="在系统文件夹执行非系统程序">
+		<Type relation="3">
+			<Function name="process_create">
+				<Parament index="0">
+					<Family>01|02|03</Family>
+					<Family notin="1">37</Family>
+				</Parament>
+			</Function>
+			<Function name="shell_execute">
+				<Parament index="0">
+					<Family>01|02|03</Family>
+					<Family notin="1">37</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="sstart_common_files" description="在common文件夹执行程序">
+		<Type relation="3">
+			<Function name="process_create">
+				<Parament index="0">
+					<Family>59</Family>
+				</Parament>
+			</Function>
+			<Function name="shell_execute">
+				<Parament index="0">
+					<Family>59</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="start_process_wellknown_dir" description="在知名文件夹执行程序">
+		<Type relation="3">
+			<Function name="process_create">
+				<Parament index="0">
+					<Family>60</Family>
+				</Parament>
+			</Function>
+			<Function name="shell_execute">
+				<Parament index="0">
+					<Family>60</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="start_process_temp_dir" description="在临时文件夹执行程序">
+		<Type relation="3">
+			<Function name="process_create">
+				<Parament index="0">
+					<Family>13</Family>
+				</Parament>
+			</Function>
+			<Function name="shell_execute">
+				<Parament index="0">
+					<Family>13</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="start_excutable_process" description="启动可执行文件">
+		<Type relation="3">
+			<Function name="process_create">
+				<Parament index="0">
+					<Family>29</Family>
+				</Parament>
+			</Function>
+			<Function name="shell_execute">
+				<Parament index="0">
+					<Family>29</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="start_other_process" description="启动非可执行文件">
+		<Type relation="3">
+			<Function name="process_create">
+				<Parament index="0">
+					<Family notin="1">29</Family>
+				</Parament>
+			</Function>
+			<Function name="shell_execute">
+				<Parament index="0">
+					<Family notin="1">29</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="start_debug_process" description="以调试方式启动进程">
+		<Type relation="1">
+			<Function name="process_create">
+				<Parament index="0">
+					<Family>61</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="start_suspended_process" description="以挂起方式启动进程">
+		<Type relation="1">
+			<Function name="process_create">
+				<Parament index="1">
+					<Family>62</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<!--sys summary-->
+	<Summary name="query_local_time" description="查找本地时间">
+		<Type relation="3">
+			<Function name="local_time_get" />
+			<Function name="system_time_get" />
+		</Type>
+	</Summary>
+	<Summary name="query_time_zone_info" description="查找时区信息">
+		<Type relation="1">
+			<Function name="timezone_info_get"/>
+		</Type>
+	</Summary>
+	<Summary name="check_debugger" description="检查调试器">
+		<Type relation="3">
+			<Function name="debugger_present" />
+			<Function name="debugger_check" />
+		</Type>
+	</Summary>
+	<Summary name="get_process_heap" description="获取进程堆信息">
+		<Type relation="1">
+			<Function name="process_heap_get"/>
+		</Type>
+	</Summary>
+	<Summary name="com_with_dev_drivers" description="设备驱动器通信">
+		<Type relation="1">
+			<Function name="deviceIo_control"/>
+		</Type>
+	</Summary>
+	<Summary name="register_own_exception_handlers" description="注册异常处理">
+		<Type relation="1">
+			<Function name="exception_register"/>
+		</Type>
+	</Summary>
+	<Summary name="mutex_creation" description="创建mutex">
+		<Type relation="1">
+			<Function name="mutex_create"/>
+		</Type>
+	</Summary>
+	<Summary name="create_pipes" description="创建命名管道">
+		<Type relation="1">
+			<Function name="namedpipe_create"/>
+		</Type>
+	</Summary>
+	<Summary name="find_window" description="搜索窗口">
+		<Type relation="1">
+			<Function name="window_find" />
+		</Type>
+	</Summary>
+	<Summary name="send_close_msg" description="发送关闭窗口消息">
+		<Type relation="3">
+			<Function name="message_post">
+				<Parament index="0">
+					<Family>63</Family>
+				</Parament>
+			</Function>
+			<Function name="message_send">
+				<Parament index="0">
+					<Family>63</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="adjust_token_privileges" description="判断令牌权限">
+		<Type relation="1">
+			<Function name="process_previlege_setPrivileges"/>
+		</Type>
+	</Summary>
+	<Summary name="use_cryptographic_funtions" description="使用加密函数">
+		<Type relation="1">
+			<Function name="crypt_used"/>
+		</Type>
+	</Summary>
+	<Summary name="query_process_info" description="查询系统进程信息">
+		<Type relation="1">
+			<Function name="process_travers"/>
+		</Type>
+	</Summary>
+	<Summary name="query_user_names" description="查询帐户信息">
+		<Type relation="3">
+			<Function name="user_name_get"/>
+			<Function name="computername_get"/>
+		</Type>
+	</Summary>
+	<Summary name="set_windows_hook" description="创建windows钩子">
+		<Type relation="1">
+			<Function name="hook_set"/>
+		</Type>
+	</Summary>
+	<Summary name="shutdown_system" description="关闭或重启系统">
+		<Type relation="3">
+			<Function name="system_shutdown_init"/>
+			<Function name="windows_exit"/>
+		</Type>
+	</Summary>
+	<Summary name="register_device_notification" description="注册设备消息">
+		<Type relation="1">
+			<Function name="device_notify_register" />
+		</Type>
+	</Summary>
+	<Summary name="check_disk_free_space" description="检查磁盘剩余空间">
+		<Type relation="1">
+			<Function name="disk_freespace_get" />
+		</Type>
+	</Summary>
+	<Summary name="clear_system_log" description="清除系统日志">
+		<Type relation="1">
+			<Function name="eventlog_clear"/>
+		</Type>
+	</Summary>
+	<Summary name="get_clipboard_data" description="获取粘贴板数据">
+		<Type relation="1">
+			<Function name="clipboard_data_get" />
+		</Type>
+	</Summary>
+	<Summary name="get_keyboard_stae" description="获取键盘状态">
+		<Type relation="1">
+			<Function name="keyboard_state_get" />
+		</Type>
+	</Summary>
+	<Summary name="add_user" description="增加用户">
+		<Type relation="1">
+			<Function name="user_add" />
+		</Type>
+	</Summary>
+	<Summary name="add_group_user" description="添加用户到用户组">
+		<Type relation="1">
+			<Function name="group_user_add" />
+		</Type>
+	</Summary>
+	<Summary name="change_virtual_protect" description="更改内存保护">
+		<Type relation="1">
+			<Function name="virtual_protect" />
+		</Type>
+	</Summary>
+	<Summary name="enum_drivers" description="枚举驱动器">
+		<Type relation="3">
+			<Function name="drive_strings_get" />
+			<Function name="drive_info_get" />
+		</Type>
+	</Summary>
+	<Summary name="enum_child_windows" description="枚举子窗口">
+		<Type relation="1">
+			<Function name="enum_child_windows" />
+		</Type>
+	</Summary>
+	<Summary name="set_system_time" description="修改系统时间">
+		<Type relation="1">
+			<Function name="local_time_set" />
+		</Type>
+	</Summary>
+	<Summary name="do_format_driver" description="格式化硬盘">
+		<Type relation="1">
+			<Function name="driver_format" />
+		</Type>
+	</Summary>
+	<Summary name="create_process_as_user" description="不同用户启动进程">
+		<Type relation="1">
+			<Function name="process_createAsUser"/>
+		</Type>
+	</Summary>
+	<!-- 2014 03 10 www
+	文件行为-->
+	<Summary name="file_access_hosts" description="访问hosts文件">
+		<Type relation="1">
+			<Function name="file_read">
+				<Parament index="0">
+					<Family>66</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="file_modify_hosts" description="修改hosts文件">
+		<Type relation="3">
+			<Function name="file_write">
+				<Parament index="0">
+					<Family>66</Family>
+				</Parament>
+			</Function>
+			<Function name="file_delete">
+				<Parament index="0">
+					<Family>66</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="file_access_boot_ini" description="访问boot.ini文件">
+		<Type relation="1">
+			<Function name="file_read">
+				<Parament index="0">
+					<Family>7</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="file_modify_boot_ini" description="修改boot.ini文件">
+		<Type relation="3">
+			<Function name="file_write">
+				<Parament index="0">
+					<Family>7</Family>
+				</Parament>
+			</Function>
+			<Function name="file_delete">
+				<Parament index="0">
+					<Family>7</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="file_access_drivers" description="访问驱动文件夹">
+		<Type relation="1">
+			<Function name="file_read">
+				<Parament index="0">
+					<Family>67</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="IE_setting_via_inject" description="以注入方式修改IE设置">
+		<Type relation="1">
+			<Function name="RemoteThreadCreated">
+				<Parament index="0">
+					<Family>39</Family>
+				</Parament>
+			</Function>
+			<Function name="reg_value_modify">
+				<Parament index="0">
+					<Family>17</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<!--20140318-->
+	<Summary name="create_process_hide_window" description="隐藏窗口创建进程">
+		<Type relation="3">
+			<Function name="process_create">
+				<Parament index="2">
+					<Family>58</Family>
+				</Parament>
+			</Function>
+			<Function name="shell_execute">
+				<Parament index="1">
+					<Family>58</Family>
+				</Parament>
+			</Function>
+			<Function name="process_winexec">
+				<Parament index="1">
+					<Family>58</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="create_autostart_service" description="创建自启动服务">
+		<Type relation="1">
+			<Function name="service_create">
+				<Parament index="3">
+					<Family>68</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="install_service" description="创建服务">
+		<Type relation="1">
+			<Function name="service_create">
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="event_create" description="创建事件">
+		<Type relation="1">
+			<Function name="event_create"/>
+		</Type>
+	</Summary>
+	<Summary name="wait_outof_time" description="等待超时">
+		<Type relation="1">
+			<Function name="waitforsingleobject">
+				<Parament index="2">
+					<Family>69</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<!-- 注册表行为 20140421-->
+	<Summary name="reg_delete_safeboot" description="删除注册表中安全模块">
+		<Type relation="3">
+			<Function name="reg_key_delete">
+				<Parament index="0">
+					<Family>71</Family>
+				</Parament>
+			</Function>
+			<Function name="reg_value_delete">
+				<Parament index="0">
+					<Family>71</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="reg_unregular_auto_start" description="非常规注册表自启动项">
+		<Type relation="1">
+			<Function name="reg_value_modify">
+				<Parament index="0">
+					<Family>72</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="reg_modify_default_application" description="修改注册表文件关联">
+		<Type relation="1">
+			<Function name="reg_value_modfiy">
+				<Parament index="0">
+					<Family>73</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<!--
+	<Summary name="" description="">
+		<Type relation="1">
+			<Function name="">
+				<Parament index="0">
+					<Family></Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	-->
+	<!--补充其他未添加的20140421-->
+	<Summary name="removable_storage_rw" description="读写移动存储设备">
+		<Type relation="3">
+			<Function name="file_write">
+				<Parament index="0">
+					<Family>44</Family>
+				</Parament>
+			</Function>
+			<Function name="file_read">
+				<Parament index="0">
+					<Family>44</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="clean_sys_log" description="清理系统日志">
+		<Type relation="1">
+			<Function name="file_delete">
+				<Parament index="0">
+					<Family>46</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="camera_open" description="打开摄像头">
+		<Type relation="1">
+			<Function name="camera_open"/>
+		</Type>
+	</Summary>
+	<Summary name="recorder_open" description="打开录音机">
+		<Type relation="1">
+			<Function name="MicOpen"/>
+		</Type>
+	</Summary>
+	<Summary name="serverport_bind" description="绑定监听端口">
+		<Type relation="1">
+			<Function name="bind"/>
+		</Type>
+	</Summary>
+	<Summary name="internet_connection" description="连接互联网">
+		<Type relation="3">
+			<Function name="network_data_transfer"/>
+		</Type>
+	</Summary>
+	<Summary name="dns_query" description="DNS查询">
+		<Type relation="1">
+			<Function name="dns_query"/>
+		</Type>
+	</Summary>
+	<Summary name="hard_drive_scan" description="硬盘扫描">
+		<Type relation="1">
+			<Function name="drive_strings_get"/>
+		</Type>
+	</Summary>
+	<Summary name="start_exe_documents" description="我的文档EXE启动">
+		<Type relation="3">
+			<Function name="process_create">
+				<Parament index="0">
+					<Family>04</Family>
+				</Parament>
+			</Function>
+			<Function name="shell_execute">
+				<Parament index="0">
+					<Family>04</Family>
+				</Parament>
+			</Function>
+			<Function name="process_winexec">
+				<Parament index="0">
+					<Family>04</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="inject_process" description="进程注入">
+		<Type relation="1">
+			<Function name="ProcessOpened">
+				<Parament index="0">
+					<Family>29</Family>
+				</Parament>
+			</Function>
+			<Function name="RemoteMemoryWrite">
+				<Parament index="0">
+					<Family>29</Family>
+				</Parament>
+			</Function>
+			<Function name="RemoteThreadCreated">
+				<Parament index="0">
+					<Family>29</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="hide_window" description="隐藏窗口">
+		<Type relation="1">
+			<Function name="window_show">
+				<Parament index="1">
+					<Family>58</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="check_key_reg" description="检测关键注册表">
+		<Type relation="1">
+			<Function name="reg_open">
+				<Parament index="0">
+					<Family>53</Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<Summary name="create_hide_process" description="创建隐藏进程">
+		<Type relation="1">
+			<Function name="process_create">
+				<Parament index="2">
+					<Family>58</Family> 
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	<!--
+	<Summary name="" description="">
+		<Type relation="1">
+			<Function name="">
+				<Parament index="0">
+					<Family></Family>
+				</Parament>
+			</Function>
+		</Type>
+	</Summary>
+	-->
+</Summaries>

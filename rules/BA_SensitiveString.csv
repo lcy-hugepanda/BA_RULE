@@ -1,0 +1,346 @@
+家族索引(FAMILYINDEX),家族名称(FAMILYNAME),匹配模式(MATCHMODE)
+1,自启动项设置文件夹,1
+C:\Documents and Settings\Administrator\「开始」菜单\程序\启动
+C:\Documents and Settings\All Users\「开始」菜单\程序\启动
+C:\Documents and Settings\Administrator \start menu\programs\startup
+C:\windows\start menu\programs\startup
+C:\Windows\All Users\Start Menu\Programs\StartUp
+C:\Documents and Settings\All Users\start menu\programs\startup
+2,系统关键文件夹,1
+C:\Windows\System32
+C:\Windows\System
+3,操作系统安装文件夹,1
+C:\Windows
+4,我的文档,1
+C:\DOCUMENTS AND SETTINGS
+C:\DOCUME~1
+5,操作系统相关文件夹,1
+C:\Documents and Settings\Administrator\Application Data\Microsoft
+C:\Program Files\Common Files
+C:\Program Files\Microsoft Common
+C:\Program Files\Windows NT
+6,网络临时文件夹,1
+C:\Documents and Settings\Administrator\Cookies
+C:\Documents and Settings\Administrator\Local Settings\Temp\Cookies
+C:\Documents and Settings\Administrator\Local Settings\Temporary Internet Files
+7,自身所在文件夹,1
+d:\MalwareAnalysis
+8,驱动程序相关文件夹,1
+C:\WINDOWS\system32\drivers
+9,即时通讯工具相关文件夹,1
+C:\Documents and Settings\Administrator\Application Data\Tencent
+c:\Program Files\Tencent
+c:\Program Files\AliWangWang
+C:\Program Files\Messenger
+c:\Program Files\Windows Live
+10,下载工具相关文件夹,1
+c:\Program Files\Thunder Network
+11,应用程序配置文件夹,1
+C:\Documents and Settings\Administrator\Application Data
+C:\Documents and Settings\Administrator\Local Settings\Application Data
+12,IE浏览器安装文件夹,1
+C:\Program Files\Internet Explorer
+13,临时文件夹,1
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp
+C:\Documents and Settings\Administrator\Local Settings\Temp
+14,自启动项位置,1
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows\AppInit_DLLs
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunServicesOnce
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\explorer\User Shell Folders
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\explorer\Shell Folders
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon
+HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\system
+HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\system
+HKEY_LOCAL_MACHINE\software\wow6432node\microsoft\windows\currentversion\run
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Terminal Server\Install\Software\Microsoft\Windows\CurrentVersion\Runonce
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Terminal Server\Install\Software\Microsoft\Windows\CurrentVersion\RunonceEx
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Terminal Server\Install\Software\Microsoft\Windows\CurrentVersion\Run 
+HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Terminal Server\Install\Software\Microsoft\Windows\CurrentVersion\Runonce
+HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Terminal Server\Install\Software\Microsoft\Windows\CurrentVersion\RunonceEx
+HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Terminal Server\Install\Software\Microsoft\Windows\CurrentVersion\Run 
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager
+HKEY_CLASSES_ROOT\Directory\Shell\KeyName\Command
+HKEY_CLASSES_ROOT\Folder\shell\open\command
+HKEY_CLASSES_ROOT\Folder\shell\explore\command
+HKEY_CLASSES_ROOT\Drive\shell\find\command 
+HKEY_CLASSES_ROOT\Applications\iexplore.exe\shell\open\command
+HKEY_CLASSES_ROOT\CLSID\{871C5380-42A0-1069-A2EA-08002B30309D}\shell\OpenHomePage\Command 
+HKEY_LOCAL_MACHINE\SOFTWARE\Clients\StartMenuInternet\IEXPLORE.EXE\shell\open\command
+HKEY_CLASSES_ROOT\.lnk\ShellNew
+HKEY_CLASSES_ROOT\.bfc\ShellNew
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts 
+HKEY_CURRENT_USER\Software\Mirabilis\ICQ\Agent\Apps\test
+HKEY_CURRENT_USER\Software\Mirabilis\ICQ\Agent\Apps\
+HKEY_LOCAL_MACHINE\Software\Microsoft\Active Setup\Installed Components\KeyName
+HKEY_CURRENT_USER\Software\Microsoft\Active Setup\Installed Components\KeyName
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Winlogon
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce\Setup
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunOnce\Setup
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\ShellServiceObjectDelayLoad
+HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\ShellServiceObjectDelayLoad
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\policies\Explorer\Run
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\Run
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\Run\*
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System\Shell
+HKEY_LOCAL_MACHINE\System\CurrentControlSet\services\VxD
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services
+HKEY_CURRENT_USER\Control Panel\Desktop
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify
+HKEY_CURRENT_USER\Software\Microsoft\Command Processor Registry keys
+HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\System\Scripts
+HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\MPRServices\*
+HKEY_CLASSES_ROOT\*\shellex\ContextMenuHandlers\Open With 
+HKEY_CURRENT_USER\Software\Classes\AllFileSystemObjects\ShellEx\ContextMenuHandlers	
+HKEY_CURRENT_USER\Software\Classes\Folder\ShellEx\ContextMenuHandlers
+HKEY_CURRENT_USER\Software\Classes\Directory\ShellEx\ContextMenuHandlers
+HKEY_CURRENT_USER\Software\Classes\Directory\Background\ShellEx\ContextMenuHandlers
+HKEY_CURRENT_USER\Software\Classes\*\ShellEx\ContextMenuHandlers
+HKEY_CURRENT_USER\Software\Classes\AllFilesystemObjects\ShellEx\ContextMenuHandlers
+HKEY_CURRENT_USER\Software\Classes\*\shellex\CopyHookHandlers
+HKEY_CURRENT_USER\Software\Classes\*\shellex\DragDropHandlers
+HKEY_CURRENT_USER\Software\Classes\*\shellex\PropertySheetHandlers
+HKEY_CURRENT_USER\Software\Classes\AllFilesystemObjects\shellex\CopyHookHandlers
+HKEY_CURRENT_USER\Software\Classes\AllFilesystemObjects\shellex\DragDropHandlers
+HKEY_CURRENT_USER\Software\Classes\AllFilesystemObjects\shellex\PropertySheetHandlers
+HKEY_CURRENT_USER\Software\Classes\Directory\shellex\CopyHookHandlers
+HKEY_CURRENT_USER\Software\Classes\Directory\shellex\DragDropHandlers
+HKEY_CURRENT_USER\Software\Classes\Directory\shellex\PropertySheetHandlers
+HKEY_CURRENT_USER\Software\Classes\Directory\Background\shellex\CopyHookHandlers
+HKEY_CURRENT_USER\Software\Classes\Directory\Background\shellex\DragDropHandlers
+HKEY_CURRENT_USER\Software\Classes\Directory\Background\shellex\PropertySheetHandlers
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Accessibility\Utility Manager\Magnifier
+HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Folder\shellex\ColumnHandlers
+HKEY_CURRENT_USER\SOFTWARE\Classes\Folder\shellex\ColumnHandlers
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\MountPoints
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\MountPoints2
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\IEXPLORE.EXE
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Print\Monitors
+HKEY_LOCAL_MACHINE\system\currentcontrolset\control\lsa
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\AeDebug
+HKEY_Local_Machine\System\CurrentControlSet\Control\Session Manager\SubSystems
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers	
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Drivers32
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\BackupPath
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\ChkDskPath
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\cleanuppath
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\DefragPath
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Authentication\Credential Provider Filters
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Authentication\Credential Providers
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\AutoplayHandlers\Handlers
+HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\ServiceControlManagerExtension
+15,文件关联设置位置,1
+HKEY_CLASSES_ROOT\exefile\shell\open\command
+16,资源管理器相关设置位置,1
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer
+17,IE浏览器相关设置位置,1
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer
+HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer
+18,系统服务相关设置位置,1
+HKEY_LOCAL_MACHINE\SYSTEM\CURRENTCONTROLSET\SERVICES
+19,网络服务相关设置位置,1
+HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Tcpip
+HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\WinSock2
+20,浏览器加载项设置位置,1
+HKEY_LOCAL_MACHINE\SOFEWARE\MICROSOFT\CURRENTVERSION\EXPLORER\BROWSER HELPER OBJECTS
+HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\Toolbar	
+HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Explorer Bars	
+HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\Explorer Bars
+HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\UrlSearchHooks	
+HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Extensions	
+HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\Extensions
+HKEY_CURRENT_USER\Software\Classes\CLSID\{CLSID}\Implemented Categories\{00021493-0000-0000-C000-000000000046}
+HKEY_CURRENT_USER\Software\Classes\CLSID\{CLSID}\Implemented Categories\{00021494-0000-0000-C000-000000000046} 
+HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\Search
+HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\Main
+HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main
+HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchUrl
+HKEY_CURRENT_USER\Software\Microsoft\Internet explorer\Abouturls
+HKEY_LOCAL_MACHINE\Software\Microsoft\Internet explorer\Activex compatibility
+HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Explorer Bars
+HKEY_LOCAL_MACHINE\Software\Microsoft\Internet explorer\Main\\*page
+HKEY_LOCAL_MACHINE\Software\Microsoft\Internet explorer\Styles
+HKEY_LOCAL_MACHINE\Software\Microsoft\Internet explorer\Menuext
+HKEY_LOCAL_MACHINE\Software\Microsoft\Internet explorer\Plugins
+21,镜像劫持注册表位置,1
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options
+HKEY_CLASSES_ROOT\exefile\shell\open\command
+HKEY_CLASSES_ROOT\comfile\shell\open\command
+HKEY_CLASSES_ROOT\cplfile\shell\cplopen\command 
+HKEY_CLASSES_ROOT\batfile\shell\open\command
+HKEY_CLASSES_ROOT\htafile\shell\open\command
+HKEY_CLASSES_ROOT\http\shell\open\command 
+HKEY_CLASSES_ROOT\htmlfile\shell\opennew\command
+HKEY_CLASSES_ROOT\htmlfile\shell\print\command
+HKEY_CLASSES_ROOT\inffile\shell\install\command
+HKEY_CLASSES_ROOT\InternetShortcut\shell\open\command 
+HKEY_CLASSES_ROOT\piffile\shell\open\command
+HKEY_CLASSES_ROOT\regfile\shell\open\command
+HKEY_CLASSES_ROOT\regfile\shell\merge\command
+HKEY_CLASSES_ROOT\vbsfile\shell\open\command
+HKEY_CLASSES_ROOT\vbefile\shell\open\command
+HKEY_CLASSES_ROOT\jsfile\shell\open\command
+HKEY_CLASSES_ROOT\jsefile\shell\open\command
+HKEY_CLASSES_ROOT\wshfile\shell\open\command
+HKEY_CLASSES_ROOT\wsffile\shell\open\command
+HKEY_CLASSES_ROOT\scrfile\shell\open\command
+HKEY_CLASSES_ROOT\scrfile\shell\config\command
+HKEY_CLASSES_ROOT\txtfile\shell\open\command
+HKEY_CLASSES_ROOT\Unknown\shell\openas\command 
+22,防火墙设置位置,1
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy
+23,系统默认加载DLL位置,1
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Windows\AppInit_DLLs
+24,操作系统设置位置,1
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows
+HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT
+25,右键菜单关联设置,1
+HKEY_CLASSES_ROOT\Drive\shellex
+26,默认网络配置设置,1
+HKEY_CLASSES_ROOT\http
+HKEY_CLASSES_ROOT\ftp
+27,浏览器安全设置,1
+HKEY_CURRENT_USER\SOFTWARE\Microsoft\Internet Explorer\Security
+28,系统启动以及设备配置设置,1
+HKEY_LOCAL_MACHINE\SYSTEM\CURRENTCONTROLSET\Control
+29,可执行文件,2
+exe
+30,服务模块,2
+sys
+31,脚本文件,2
+bat
+32,配置文件,2
+inf
+ini
+33,动态链接库文件,2
+dll
+34,临时文件,2
+tmp
+35,二进制数据文件,2
+dat
+36,杀毒软件进程名,3
+ccenter
+ravmond
+ravmon
+rfwsrv
+avconsol
+navapsvc
+rtvscan
+vsstat
+360sd
+360rp
+360tray
+KAVSvc
+NPFMntor
+ZONEALARM
+PFW
+KVFW
+KVsrvXP
+avp
+iparmor
+37,系统重要进程名,3
+explorer
+lsass
+Services
+system
+spoolsv
+svchost
+wuauclt
+smss
+winlogon
+internat
+taskmagr
+systray
+38,系统关键配置文件,3
+hosts
+39,磁盘自动运行配置文件,3
+autorun
+40,IE浏览器进程,3
+iexplore
+41,与正常进程混淆的进程名,3
+SVCH0ST
+Expiorer
+Rundll
+kernel32
+Windows
+42,系统动态链接库名,1
+ole32.dll
+kernel32.dll
+gdi32.dll
+USER32.dll
+ADVAPI32.dll
+SHLWAPI.dll
+43,网络相关动态链接库名,1
+WININET.dll
+NETAPI32.dll
+WS2_32.dll
+urlmon.dll
+netapi32.dll
+mpr.dll
+iphlpapi.dll
+44,移动存储设备位置,4
+R
+45,自身路径,5
+D:\xdian.exe
+d:\xdian.exe
+46,系统日志文件,1
+C:\WINDOWS\system32\config
+C:\WINDOWS\system32\logfiles
+47,Windows自动更新设置,1
+HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate
+48,Explorer设置,1
+HKEY_LOCAL_USER\Software\Policies\Microsoft\Internet Explorer\Control Panel
+49,禁用任务管理器,1
+HKEY_CURRENT_USER\Software\Microsoft\ Windows\CurrentVersion\Policies\System\DisableTaskMgr
+50,禁用注册表编辑器,1
+HKEY_CURRENT_USER\Software\Microsoft\ Windows\CurrentVersion\Policies\System\DisableRegistryTools
+51,Explorer插件,2
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\InternetExplorer\Extensions
+52,回收站,1
+C:\Recycled
+D:\Recycled
+E:\Recycled
+53,常用软件进程名,3
+skype
+qq
+taskmgr
+realplay
+wordpad
+realplay
+notepad
+calc
+winzip
+thunder
+54,敏感注册表位置,1
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Ras
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\policies\Network
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\User Agent\Post Platform
+HKEY_CURRENT_USER\Software\Microsoft\Security Center
+HKEY_LOCAL_MACHINE\Software\Microsoft\Security Center
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Netcache
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\Folder\HideFileExt
+HKEY_CURRENT_USER\Software\Microsoft\Internet explorer\Main\\*page
+HKEY_CURRENT_USER\Software\Microsoft\Internet explorer\Main\\Enable Browser Extensions
+HKEY_CURRENT_USER\Software\Microsoft\Internet explorer\Main\Featurecontrol
+HKEY_CURRENT_USER\Software\Microsoft\Internet explorer\Menuext
+HKEY_CURRENT_USER\Software\Microsoft\Internet explorer\Styles
+HKEY_LOCAL_MACHINE\Software\Clients\Startmenuinternet
+HKEY_LOCAL_MACHINE\Software\Microsoft\Code store database\Distribution units
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\Currentversion\Explorer\Browser helpr objects
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\Currentversion\Internet settings\*zones
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\Currentversion\Internet settings\Safesites
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\Currentversion\Internet settings\Url
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\Currentversion\Internet settings\Zonemap\Protocoldefaults
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\Currentversion\Internet settings\Zonemap\Domains
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\Currentversion\Internet settings\Zonemap\Ranges
