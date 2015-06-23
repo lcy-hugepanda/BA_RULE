@@ -1,5 +1,7 @@
 # BA_RULE
- Rule sets for malware behavior abstration
+ Rule sets for malware behavior abstration.
+ 
+ The rules are used in the bi-layer behavior abstraction for malware detection. Details about them will be updated when the related paper is published. 
 
 (1) Lower layer behavior abstraction rules (.csv files):
 
